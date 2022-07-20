@@ -74,7 +74,7 @@
             // response.json() =Convert data to readable data when using response.json()
             .then((response) => {
               if(!response.ok)
-                  throw new Error("Country not find . Please try again .");
+                  throw new Error("Country not found . Please try again .");
                 return response.json();
             })
             .then((data) => {
@@ -82,7 +82,7 @@
               const countries =(data[0].borders);
 
               if(!countries) 
-                    throw new Error("Border countries not find");
+                    throw new Error("Border countries not found");
 
               return fetch("https://restcountries.com/v3.1/alpha?codes=" + countries.toString());
             })
